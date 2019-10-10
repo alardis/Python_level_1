@@ -9,7 +9,7 @@ seconds = int(seconds)
 hours_actual = int(seconds / 60 / 60)
 mins_actual = int(seconds / 60) - hours_actual*60
 seconds_actual = seconds - (hours_actual*60 + mins_actual) * 60
-print(f"Вы записали в секундах: {hours_actual:>02}:{mins_actual:>02}:{seconds_actual:>02}")
+print(f"Вы записали в секундах: {hours_actual:02}:{mins_actual:02}:{seconds_actual:02}")
 
 # Узнайте у пользователя число n. Найдите сумму чисел n + nn + nnn. Например, пользователь ввёл число 3.
 # Считаем 3 + 33 + 333 = 369.
@@ -70,6 +70,8 @@ if income > costs:
     emp_number = int(emp_number)
     personal_income = income / emp_number
     print(f"Выручка на одного сотрудника выходит: {personal_income}")
+elif income == costs:
+    print ('Фирма еле-еле на плаву!')
 else:
     print ('Фирма отработала в минус :(')
 
