@@ -44,3 +44,25 @@ while input_data != 'quit':
 
 
 print(structure_list)
+
+# Необходимо собрать аналитику о товарах. Реализовать словарь, в котором каждый ключ — характеристика товара,
+# например название, а значение — список значений-характеристик, например список названий товаров.
+# Пример:
+# { “название”: [“компьютер”, “принтер”, “сканер”], “цена”: [20000, 6000, 2000], “количество”: [5, 2, 7], “ед”: [“шт.”] }
+
+
+analyst_dict = {"название" : [], "цена" : [], "количество" : [], "ед" : []}
+
+for item in structure_list:
+    for key, value in item[1].items():
+        if key in analyst_dict:
+            analyst_list = analyst_dict[key]
+            if not value in analyst_list:
+                analyst_list.append(value)
+
+
+print(analyst_dict)
+
+
+
+
