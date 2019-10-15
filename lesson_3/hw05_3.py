@@ -5,3 +5,40 @@
 # добавить сумму этих чисел к полученной ранее сумме и после этого завершить программу.
 
 
+import string
+
+# помещать весь процесс в функцию нет никакого смысла
+# соответственно, в функцию надо вынести исключительно атомарную операцию сложения строки
+# функция будет возвращать второй параметр, говорящий, имеет ли смысл запрашивать еще одну строку, или все уже
+# если в строке будет найден некорректный символ, второй параметр будет False
+
+
+def sum_line(line, prev_sum):
+    """
+    Считает сумму чисел в строке, проверяет, можно ли запрашивать еще одну строку на посчитать
+    :param line: str
+    :param prev_sum: int
+    :return: int, bool
+    """
+    result = 0
+    more = True
+    num_list = line.split(' ')
+
+    try:
+        for number in num_list:
+            if number not in string.punctuation:
+                result += int(number)
+            else:
+                more = False
+                break
+        return result + prev_sum, more
+    except ValueError:
+        print('Проверьте входной набор чисел')
+
+
+another = True
+current_sum = 0
+while another:
+    text_line = input('Введите строку чисел, разделенную пробелом\n')
+    current_sum, another = sum_line(text_line, current_sum)
+    print(f'Сумма чисел в строке: {current_sum}')

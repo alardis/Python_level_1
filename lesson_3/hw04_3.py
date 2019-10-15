@@ -3,3 +3,29 @@
 # необходимо обойтись без встроенной функции возведения числа в степень.
 
 
+def my_func(x, y) -> float:
+    """
+    Возводит число x в степень y
+    :param x: float
+    :param y: int
+    :return: float
+    """
+    try:
+        x = float(x)
+        y = int(y)
+        result = 1
+        if x > 0 > y:
+            for i in range(-y):
+                print(f'Работаем с возведением в степень')
+                result = result * x
+            result = 1 / result
+            return result
+        else:
+            raise ValueError
+    except ValueError:
+        print('Что-то не так с набором чисел, проверьте')
+
+
+a = input('Введите число Х, которое должно быть действительным и положительным\n')
+b = input('Введите число Y, которое должно быть целым и отрицательным\n')
+print(my_func(a, b))

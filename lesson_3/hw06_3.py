@@ -5,3 +5,17 @@
 # с заглавной буквы. Необходимо использовать написанную ранее функцию int_func().
 
 
+def int_func(local_word) -> str:
+    return local_word[0].upper() + local_word[1:]
+
+
+# первая часть программы
+print(int_func('text'))
+
+# вторая часть программы
+line = input('Введите строку текста маленькими латинскими буквами\n')
+new_line = ''
+for word in line.split(' '):
+    new_line += int_func(word) + ' '
+new_line = new_line.strip()
+print(new_line)

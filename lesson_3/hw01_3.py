@@ -3,6 +3,12 @@
 
 
 def divider_self(local_a, local_b) -> float:
+    """
+    Функция делит одно число на другое. Значение округляется для приятного вывода
+    :param local_a: int
+    :param local_b: int
+    :return: float
+    """
     # блок перехвата исключений
     try:
         local_a = int(local_a)

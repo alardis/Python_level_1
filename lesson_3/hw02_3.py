@@ -4,6 +4,11 @@
 
 
 def user_data_func(**kwargs) -> str:
+    """
+    Функция выводит параметры пользователя в одну строку
+    :param kwargs: dict
+    :return: str
+    """
     if kwargs:
         result = ''
         for key, value in kwargs.items():

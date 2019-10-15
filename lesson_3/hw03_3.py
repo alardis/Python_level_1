@@ -3,6 +3,11 @@
 
 
 def sum_max(*args) -> int:
+    """
+    Функция возвращает сумму двух наибольших аргументов из трех
+    :param args: int
+    :return: int
+    """
     if args and len(args) == 3:
         return sum(args) - min(args)
     else:
