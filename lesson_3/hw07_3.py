@@ -19,3 +19,11 @@ list_to_plain = [1,  2, [3, 4, [5]], 6, [[[7, [8]]]]]
 list_convert(mylist, list_to_plain)
 
 print(mylist)
+
+# а теперь попробуем то же самое с лямбдой
+mylist1 = []
+lambda_plain = lambda item: mylist1.append(item) if type(item) is not list else [lambda_plain(i) for i in item]
+
+[lambda_plain(i) for i in list_to_plain]
+
+print(f"mylist1: {mylist1}")
