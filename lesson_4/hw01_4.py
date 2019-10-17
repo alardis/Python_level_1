@@ -3,3 +3,13 @@
 # конкретных значений необходимо запускать скрипт с параметрами.
 
 
+import sys
+
+
+hours, costs, bonus = sys.argv[1:]
+try:
+    salary = int(hours) * int(costs) + int(bonus)
+    print(f'Сотрудник должен получить {salary} рублей')
+except ValueError:
+    print('Какие-то проблемы с параметрами. Не можем посчитать зарплату :(')
+
