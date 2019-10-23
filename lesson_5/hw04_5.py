@@ -12,7 +12,7 @@ import os
 
 translator = {'One': 'Один', 'Two': 'Два', 'Three': 'Три', 'Four': 'Четыре'}
 try:
-    with open(f'{os.path.abspath("Python_level_1/lesson_5")}/new_file.txt', 'r', encoding='utf-8') as file,\
+    with open(f'{os.path.abspath("Python_level_1/lesson_5")}/new_file.txt', 'x', encoding='utf-8') as file,\
             open(f'{os.path.abspath("Python_level_1/lesson_5")}/new_new_file.txt', 'a+', encoding='utf-8') as sec_file:
         lines = file.readlines()
         for line in lines:
