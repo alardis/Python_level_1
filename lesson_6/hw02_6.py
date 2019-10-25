@@ -5,5 +5,21 @@
 # толщиной в 1 см*число см толщины полотна. Проверить работу метода.
 # Например: 20м*5000м*25кг*5см = 12500 т
 
+# замечу, что формула в примере расчета некорректная, поскольку 5см необходимо перевести в метры, что мы и сделаем
 
 
+class Road:
+    _length: int
+    _width: int
+
+    def __init__(self, length, width):
+        self._length = length
+        self._width = width
+
+    def get_quantity(self, thickness):
+        quantity = self._length * self._width * 25 * thickness / 1000
+        print(f'Масса асфальта: {self._length}м * {self._width}м * 25кг * {thickness}м  =  {quantity} тонн')
+
+
+road = Road(5000, 20)
+road.get_quantity(0.05)
