@@ -5,3 +5,33 @@
 # для каждого экземпляра.
 
 
+class Stationery:
+    title: str
+
+    def draw(self):
+        print('Запуск отрисовки')
+
+
+class Pen(Stationery):
+    def draw(self):
+        print('Пишем ручкой. Ластиком не стирается :(')
+
+
+class Pencil(Stationery):
+    def draw(self):
+        print('Пишем карандашом. Надо бы заточить!')
+
+
+class Handle(Stationery):
+    def draw(self):
+        print('Пишем маркером. Очень толстая линия, стирается хуже ручки')
+
+
+pen = Pen()
+pen.draw()
+
+pencil = Pencil()
+pencil.draw()
+
+handle = Handle()
+handle.draw()
