@@ -21,3 +21,41 @@
 # с первым элементом первой строки второй матрицы и т.д.
 
 
+class Matrix:
+    __data: list
+
+    def __init__(self, data: list):
+        self.__data = data.copy()
+        print(f'Создали матрицу с параметром: {self.__data}')
+
+    def __str__(self):
+        result = ''
+        for row in self.__data:
+            for cell in row:
+                result = f'{result}{cell}\t'
+            result = result.strip('\t')
+            result = f'{result}\n'
+        result = result.strip('\n')
+        return result
+
+    def __add__(self, other):
+        if not isinstance(other, Matrix):
+            raise ValueError('Слагаемое не является матрицей')
+
+        new_data = []
+        if len(self.__data) != len(other.__data):
+            raise ValueError('Матрицы разных размеров, сложение невозможно')
+        for row_self, row_other in zip(self.__data, other.__data):
+            if len(row_self) != len(row_other):
+                raise ValueError('Матрицы разных размеров, сложение невозможно')
+            local_list = []
+            for cell_self, cell_other in zip(row_self, row_other):
+                local_list.append(cell_self + cell_other)
+            new_data.append(local_list)
+        return Matrix(new_data)
+
+
+matrix = Matrix([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
+print(matrix)
+matrix2 = Matrix([[1, 1, 1, 1, 1], [1, 1, 1, 1, 1]])
+print(matrix + matrix2)
