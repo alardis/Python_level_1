@@ -64,8 +64,9 @@ class Printer(OfficeEquipment):
     def cartridge_status(self, value):
         self.__cartridge_status = value
 
-    def __init__(self, id, title, price, status):
+    def __init__(self, id, title, price, status, cartridge_status):
         super().__init__(id, title, price, status)
+        self.__cartridge_status = cartridge_status
 
 
 class ScannerEquipment(OfficeEquipment):
@@ -79,8 +80,9 @@ class ScannerEquipment(OfficeEquipment):
     def resource(self, value):
         self.__resource = value
 
-    def __init__(self, id, title, price, status):
+    def __init__(self, id, title, price, status, resource):
         super().__init__(id, title, price, status)
+        self.__resource = resource
 
 
 class PhotoCopier(OfficeEquipment):
@@ -94,8 +96,9 @@ class PhotoCopier(OfficeEquipment):
     def print_mode(self, value):
         self.__print_mode = value
 
-    def __init__(self, id, title, price, status):
+    def __init__(self, id, title, price, status, print_mode):
         super().__init__(id, title, price, status)
+        self.__print_mode = print_mode
 
 
 class WareHouse:
