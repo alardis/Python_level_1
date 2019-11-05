@@ -19,7 +19,7 @@ class OfficeEquipment(ABC):
 
     @id.setter
     def id(self, value):
-        pass
+        self.__id = value
 
     @property
     def price(self):
@@ -35,7 +35,7 @@ class OfficeEquipment(ABC):
         return self.__title
 
     @title.setter
-    def id(self, value):
+    def title(self, value):
         self.__title = value
 
     @property
