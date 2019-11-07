@@ -25,6 +25,9 @@ class WareHouse:
         self.__data_storage.update({self.__counter: record})
         self.__counter += 1
 
+    def __init__(self):
+        self.data_storage.clear()
+
 
 # проверяем, как это все работает
 warehouse = WareHouse()
